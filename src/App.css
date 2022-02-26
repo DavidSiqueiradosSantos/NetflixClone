@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 12pt;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
