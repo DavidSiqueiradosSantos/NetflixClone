@@ -7,9 +7,9 @@ import Header from "./components/Header";
 /* eslint import/no-anonymous-default-export:[2, {"allowArrowFunction": true}] */
 
 
-  
+
 export default () => {
-  
+
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
@@ -34,13 +34,13 @@ export default () => {
     loadAll();
   }, []);
 
-    
-  useEffect(()=>{
-    const scrollListener = () => {
-      if(window.scrollY > 10) {
-      setBlackHeader(true);
 
-      }else{
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+
+      } else {
         setBlackHeader(false);
       }
     }
@@ -49,13 +49,13 @@ export default () => {
 
     return () => {
       window.removeEventListener('scroll', scrollListener);
-    
+
     }
-}, []);
+  }, []);
 
   return (
-    <div className="page">  
-      
+    <div className="page">
+
 
       <Header black={blackHeader} />
 
@@ -69,22 +69,26 @@ export default () => {
       </section>
 
       <footer>
-        Feito com <span role="img" aria-label="coração"></span> ❤️ pelo 
-        
-        <a href="https://github.com/DavidSiqueiradosSantos" className="rodape" className="git" > / <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi0bLxuEi18jk-9fdGtQY6osFseJzpmLJvgg&usqp=CAU" alt="img" width={20}></img>  DavidSiqueiradosSantos </a><br/>
-    
-        Direitos de imagem para Netflix<br/>
-        Dados pegos do site Themoviedb.org
+        Feito com <span role="img" aria-label="coração"></span> ❤️ pelo
+
+        <a href="https://github.com/DavidSiqueiradosSantos" className="rodape" className="git" > / <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi0bLxuEi18jk-9fdGtQY6osFseJzpmLJvgg&usqp=CAU" alt="img" width={20}></img>  DavidSiqueiradosSantos </a><br />
+
+        Direitos de imagem para Netflix<br />
+        Dados pegos do site Themoviedb.org<br>
+        </br>
+        <br/>
+        <center>Contato</center>
+        davidsiqueiradossantos556@gmail.com
       </footer>
 
-    
+
       {movieList.length <= 0 &&
-      <div className="loading">
-        <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="carregando" width={600}></img>
-      </div>
-      
-    }
-  
+        <div className="loading">
+          <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="carregando" width={600}></img>
+        </div>
+
+      }
+
     </div>
 
   );
